@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="prefetch" href="source/Background7.png">
+        <link rel="stylesheet" type="text/css" href="Stylesheets/stylesheet.css">
+        <link rel="stylesheet" type="text/css" href="Stylesheets/scenes.css">
+        <link rel="stylesheet" type="text/css" href="Stylesheets/menu.css">
+        <link rel="stylesheet" type="text/css" href="Stylesheets/clock.css">
+        <link rel="stylesheet" type="text/css" href="Stylesheets/laden.css">
+        <link rel="prerender" href="contact.html">
+        <link rel="prerender" href="route.html">
+        <link rel="prerender" href="index.html">
+        <link rel="prerender" href="crosspoint.html">
+        <link rel="prerender" href="kerstverhaal.html">
+        <link rel="prerender" href="vooraf.html">
+        <link rel="prerender" href="scenes.html">
+        <link rel="prerender" href="kaarsje.html">
+        <link rel="prerender" href="afloop.html">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800" rel="stylesheet"> 
+        <!--<link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300' rel='stylesheet' type='text/css'>-->
+        <title>CrossPoint | Kerstwandeling CrossPoint</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script src="source/scripts/Bigmac.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.2.0/imagesloaded.pkgd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    </head>
+   <script>
+    window.setInterval(function() {
+      $('#moetweg').hide();
+      $('#moetweg2').hide();
+      $('#moetweg3').hide();
+      $('#moetweg4').hide();
+      $('#moetweg5').hide();
+      $('#moetweg6').hide();
+      var current = new Date();
+      var expiry = new Date("December 23, 2017 16:00:00")
+
+
+      if (current.getTime() > expiry.getTime()) {
+        $('#moetweg').show();
+        $('#moetweg2').show();
+        $('#moetweg3').show();
+        $('#moetweg4').show();
+        $('#moetweg5').show();
+        $('#moetweg6').show();
+        $('#menutesk').hide();
+      }
+
+    }, 1000);
+  </script>
+
+    <body>
+        <div id="title">
+             <input type="checkbox" id="menu">
+         <label id="burgertje" for="menu" onclick></label>
+         <nav role="off-canvas">
+            <div id="sidebarlogo">
+               <a href="http://crosspointgetsewoud.nl" target="_blank"><img src="source/images/logo.png" alt="Het CrossPoint logo" id="crosspoint-logo"></a>
+            </div>
+            <div>
+               <h3 id=menutesk>Meer pagina's worden 2 uur voor de wandeling beschikbaar gemaakt</h3>
+            </div>
+            <div id="media">
+               <a href="https://nl-nl.facebook.com/crosspointgetsewoud/" target="_blank"><img src="source/images/facebook-logo.png" alt="Het facebook logo" id="facebook-logo" class="socialmedia-logo"></a>
+               <a href="http://crosspointgetsewoud.nl" target="_blank"><img src="source/images/internet-logo.png" alt="Het internet logo" id="internet-logo" class="socialmedia-logo"></a>
+               <a href="mailto:kerstwandeling@crosspointgetsewoud.nl?subject=Feedback Kerstwandeling&bcc=cemre8@live.nl"><img src="source/images/email-logo.png" alt="Het email logo" id="email-logo" class="socialmedia-logo"></a>
+            </div>
+            <ul>
+               <li><a href="index.html">Home</a></li>
+               <li> <a href="vooraf.html">Vooraf</a></li>
+               <li id="moetweg"><a href="route.html">Route en kaart</a></li>
+               <li id="moetweg2"><a href="scenes.html">Scènes</a></li>
+               <li><a href="kerstverhaal.html">Het kerstverhaal</a></li>
+               <li id="moetweg6"><a href="kaarsje.html">Kaarsje Aansteken</a></li>
+               <li id="moetweg3"><a href="afloop.html">Achteraf</a></li>
+               <li><a href="crosspoint.html">Over Crosspoint</a></li>
+               <li><a href="contact.html">Contact</a></li>
+            </ul>
+         </nav>
+            <h1 id="page-title" class="fix-die-niet-goed-is-maar-wel-werkt">Over CrossPoint</h1>
+        </div>
+        
+        <div class="everything">
+        <div class="w3-content w3-display-container" style="max-width:800px">
+            <img class="mySlides w3-animate-fading" src="source/images/image-slider/image-slider1.png" style="width:100%">
+            <img class="mySlides w3-animate-fading" src="source/images/image-slider/image-slider2.png" style="width:100%">
+            <img class="mySlides w3-animate-fading" src="source/images/image-slider/image-slider3.png" style="width:100%">
+            <img class="mySlides w3-animate-fading" src="source/images/image-slider/image-slider4.png" style="width:100%">
+            <img class="mySlides w3-animate-fading" src="source/images/image-slider/image-slider5.png" style="width:100%">
+            <img class="mySlides w3-animate-fading" src="source/images/image-slider/image-slider6.png" style="width:100%">
+            <img class="mySlides w3-animate-fading" src="source/images/image-slider/image-slider7.png" style="width:100%">
+            <img class="mySlides w3-animate-fading" src="source/images/image-slider/image-slider8.png" style="width:100%">
+            <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+                <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+                <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(5)"></span>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(6)"></span>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(7)"></span>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(8)"></span>
+            </div>
+        </div>
+        <script>
+            var slideIndex = 1;
+            showDivs(slideIndex);
+            
+            var myIndex = 0;
+            carousel();
+
+            function plusDivs(n) {
+                showDivs(slideIndex += n);
+            }
+
+            function currentDiv(n) {
+                showDivs(slideIndex = n);
+            }
+
+            function showDivs(n) {
+                var i;
+                var x = document.getElementsByClassName("mySlides");
+                var dots = document.getElementsByClassName("demo");
+                if (n > x.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = x.length }
+                for (i = 0; i < x.length; i++) {
+                    x[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" w3-white", "");
+                }
+                x[slideIndex - 1].style.display = "block";
+                dots[slideIndex - 1].className += " w3-white";
+            }
+            function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 9000);    
+}
+        </script>
+        <h3>
+            We zijn een kerk in Getsewoud. We zijn eigentijds, maar ook tegendraads. We zijn gastvrij, maar ook prikkelend. We zijn gelovig, maar ook nieuwsgierig. En, iedereen is welkom! Mensen die mee doen met CrossPoint zijn mensen die nog maar kort of al wat
+            langer op weg zijn met Jezus. Soms aarzelend, zoekend. Mensen die iets willen delen van zijn passie voor mensen. Laat je je verrassen? <br><br>
+           Zondagmorgen is een mooie plek om elkaar te ontmoeten, netwerken, tijd voor koffie. Het is ook
+           het moment om samen op zoek te zijn naar de relelvantie van geloven in God. God ontmoeten dus.
+           Je bent van harte welkom om dat te ontdekken en te beleven! <br><br>
+           We leggen overigens steeds meer accent bij doordeweekse ontmoetingen, cursussen en initiatieven!
+           Je kunt daarbij denken aan een kenningsmakingscursus over geloven, de zogenaamde Alphacursus. We organiseren iedere maandagmiddag een House of Joy voor de statushouders in
+           ons dorp. In de zomervakantie waren er drie middagen speciaal voor kinderen met sport, spel en 
+           pannekoeken. In 2018 geven we een cursus voor mensen die hun relatie willen versterken. En nog 
+           veel meer... <br><br>
+        </h3>
+        <p>
+            Als u meer wilt weten over onze kerk dan vragen wij u om naar onze website <a href="http://crosspointgetsewoud.nl/">www.CrossPointGetsewoud.nl</a> te gaan.
+        </p>
+        </div>
+    </body>
+
+</html>

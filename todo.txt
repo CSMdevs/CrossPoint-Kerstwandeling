@@ -1,0 +1,25 @@
+1: Bijlage van route als download - Micha
+2: Zorgen dat mensen de route in hun eigen google maps app kunnen gooien - Micha
+3: Ingesproken kerstverhaal erin zetten - Chambre
+4: Gedicht voorlezen en erin zetten - 
+5: Afloop scherm - Chambre
+
+
+Prioriteiten:
+1. Alle schermen zijn klaar
+    A: Hoofdscherm - DONE
+    B: Vooraf - DONE
+    C: Route - DONE
+    D: Scènes - DONE (denk ik)
+    E: Afloop - WIP - Cham
+    F: ChrossPoint - WIP - Stan
+    G: Kerstverhaal - Bijna klaar - Cham
+
+2: Alle content (tekst + plaatjes) is klaar en aanwezig in de App - DONE
+
+3: De navigatie tussen de verschillende schermen werkt helemaal - DONE (denk ik, ik ook)
+
+4: Tot 1 uur voor het begin zijn alleen hoofdscherm, voorafpagina, crosspoint en kerstverhaal beschikbaar - Doet cham wel
+
+5: In de app is het kaartje te zien DONE
+

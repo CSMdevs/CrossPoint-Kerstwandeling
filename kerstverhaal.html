@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="prefetch" href="source/Background7.png">
+        <link rel="stylesheet" type="text/css" href="Stylesheets/stylesheet.css">
+        <link rel="stylesheet" type="text/css" href="Stylesheets/menu.css">
+        <link rel="stylesheet" type="text/css" href="Stylesheets/clock.css">
+        <link rel="stylesheet" type="text/css" href="Stylesheets/laden.css">
+        <link rel="prerender" href="contact.html">
+        <link rel="prerender" href="route.html">
+        <link rel="prerender" href="index.html">
+        <link rel="prerender" href="crosspoint.html">
+        <link rel="prerender" href="kerstverhaal.html">
+        <link rel="prerender" href="vooraf.html">
+        <link rel="prerender" href="scenes.html">
+        <link rel="prerender" href="kaarsje.html">
+        <link rel="prerender" href="afloop.html">
+        <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300' rel='stylesheet' type='text/css'>
+        <title>Kerstverhaal | Kerstwandeling CrossPoint</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script src="source/scripts/Bigmac.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.2.0/imagesloaded.pkgd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+    </head>
+   <script>
+    window.setInterval(function() {
+      $('#moetweg').hide();
+      $('#moetweg2').hide();
+      $('#moetweg3').hide();
+      $('#moetweg4').hide();
+      $('#moetweg5').hide();
+      $('#moetweg6').hide();
+      var current = new Date();
+      var expiry = new Date("December 23, 2017 16:00:00")
+
+
+      if (current.getTime() > expiry.getTime()) {
+        $('#moetweg').show();
+        $('#moetweg2').show();
+        $('#moetweg3').show();
+        $('#moetweg4').show();
+        $('#moetweg5').show();
+        $('#moetweg6').show();
+        $('#menutesk').hide();
+      }
+
+    }, 1000);
+  </script>
+    <body>
+        <div id="title">
+              <input type="checkbox" id="menu">
+         <label id="burgertje" for="menu" onclick></label>
+         <nav role="off-canvas">
+            <div id="sidebarlogo">
+               <a href="http://crosspointgetsewoud.nl" target="_blank"><img src="source/images/logo.png" alt="Het CrossPoint logo" id="crosspoint-logo"></a>
+            </div>
+            <div>
+               <h3 id=menutesk>Meer pagina's worden 2 uur voor de wandeling beschikbaar gemaakt</h3>
+            </div>
+            <div id="media">
+               <a href="https://nl-nl.facebook.com/crosspointgetsewoud/" target="_blank"><img src="source/images/facebook-logo.png" alt="Het facebook logo" id="facebook-logo" class="socialmedia-logo"></a>
+               <a href="http://crosspointgetsewoud.nl" target="_blank"><img src="source/images/internet-logo.png" alt="Het internet logo" id="internet-logo" class="socialmedia-logo"></a>
+               <a href="mailto:kerstwandeling@crosspointgetsewoud.nl?subject=Feedback Kerstwandeling&bcc=cemre8@live.nl"><img src="source/images/email-logo.png" alt="Het email logo" id="email-logo" class="socialmedia-logo"></a>
+            </div>
+            <ul>
+               <li><a href="index.html">Home</a></li>
+               <li> <a href="vooraf.html">Vooraf</a></li>
+               <li id="moetweg"><a href="route.html">Route en kaart</a></li>
+               <li id="moetweg2"><a href="scenes.html">Scènes</a></li>
+               <li><a href="kerstverhaal.html">Het kerstverhaal</a></li>
+               <li id="moetweg6"><a href="kaarsje.html">Kaarsje Aansteken</a></li>
+               <li id="moetweg3"><a href="afloop.html">Achteraf</a></li>
+               <li><a href="crosspoint.html">Over Crosspoint</a></li>
+               <li><a href="contact.html">Contact</a></li>
+            </ul>
+         </nav>
+            <h1 id="page-title">Het Kerstverhaal</h1>
+        </div>
+        <h1 id="page-title">Het Kerstverhaal</h1>
+        </div>
+        <div class="everything">
+        <h1>De geboorte van Jezus</h1>
+         <audio controls>
+                <source src="verhaal.mp3" type="audio/mpeg">
+                Helaas is uw smartphone niet in staat om dit audiofragment af te spelen, wij adviseren u om bij te werken naar de nieuwste updates.
+            </audio>
+            <h3>Het kerstverhaal door Matthias de Bruin</h3>
+       <div id="kerstverhaal"> <h2>Jozef en Maria gaan naar Betlehem</h2>
+        <h3>1. In die tijd werd er een bevel van keizer Augustus bekendgemaakt. Hij wilde alle inwoners van het Romeinse rijk laten tellen. <br><br>2. Het was de eerste keer dat dit gebeurde. Het was in de tijd dat Quirinius de provincie Syrië bestuurde. <br><br> 3. Iedereen
+            moest geteld worden in de plaats waar zijn familie vandaan kwam. Daarom gingen alle mensen op reis.<br><br> 4-5. Ook Jozef moest op reis. Hij ging van Nazaret in Galilea naar Betlehem in Judea. Want hij kwam uit de familie van David, en David kwam
+            uit Betlehem. Jozef ging samen met Maria naar Betlehem. Maria zou met Jozef gaan trouwen, en ze was zwanger.</h3><br>
+        <h2>Jezus wordt geboren</h2>
+        <h3>6. Toen Jozef en Maria in Betlehem waren, werd het kind geboren. <br><br>7. Het was Maria’s eerste kind, een jongen. Maria wikkelde hem in een doek, en legde hem in een voerbak voor de dieren. Want er was voor hen nergens plaats om te slapen.</h3><br>
+        <h2>Herders horen het goede nieuws</h2>
+        <h3>8. Die nacht waren er herders in de buurt van Betlehem. Ze pasten buiten op hun schapen.<br><br> 9. Opeens stond er een engel tussen de herders, en het licht van God straalde om hen heen. De herders werden bang.<br><br> 10. Maar de engel zei: ‘Jullie hoeven niet
+            bang te zijn, want ik breng jullie goed nieuws. Het hele volk zal daar blij mee zijn. <br><br> 11. Vandaag is jullie redder geboren: Christus, de Heer. Hij is geboren in Betlehem, de stad van David.<br><br> 12. En zo kunnen jullie hem herkennen: het kind ligt
+            in een voerbak en is in een doek gewikkeld.’<br><br> 13. En plotseling was er bij de engel een hele groep engelen. Ze eerden God en zeiden: <br> 14. ‘Alle eer aan God in de hemel. En vrede op aarde voor de mensen van wie God houdt.’</h3>
+        <h2>De herders gaan naar Betlehem</h2>
+        <h3>15. Daarna gingen de engelen terug naar de hemel. De herders zeiden tegen elkaar: ‘Kom, we gaan naar Betlehem. Want God heeft ons verteld wat er gebeurd is. Laten we gaan kijken.’ <br><br>16. Ze gingen meteen naar Betlehem. Daar vonden ze Maria en Jozef,
+            en in een voerbak lag het kind.<br><br> 17. Toen de herders het kind zagen, vertelden ze wat de engel over hem gezegd had.<br><br> 18. Iedereen die het hoorde, was verbaasd over het verhaal van de herders.<br><br> 19. Maria probeerde te begrijpen wat het betekende.
+            Ze bleef nadenken over wat de herders gezegd hadden.<br><br> 20. De herders gingen terug naar hun schapen. Ze eerden God en dankten hem voor alles wat ze gezien en gehoord hadden. Want alles was precies zoals de engel gezegd had.</h3>
+        </div>
+        </div/
+    </body>
+
+</html>

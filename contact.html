@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <link rel="prefetch" href="source/Background7.png">
+        <link rel="stylesheet" type="text/css" href="Stylesheets/stylesheet.css">
+        <link rel="stylesheet" type="text/css" href="Stylesheets/buttons.css">
+        <link rel="stylesheet" type="text/css" href="Stylesheets/menu.css">
+        <link rel="stylesheet" type="text/css" href="Stylesheets/clock.css">
+        <link rel="stylesheet" type="text/css" href="Stylesheets/laden.css">
+        <link rel="next" href="contact.html">
+        <link rel="next" href="route.html">
+        <link rel="prev" href="index.html">
+        <link rel="next" href="crosspoint.html">
+        <link rel="next" href="kerstverhaal.html">
+        <link rel="next" href="vooraf.html">
+        <link rel="next" href="scenes.html">
+        <link rel="next" href="kaarsje.html">
+        <link rel="next" href="afloop.html">
+        <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300' rel='stylesheet' type='text/css'>
+        <title>Contact | Kerstwandeling CrossPoint</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script src="source/scripts/Bigmac.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.2.0/imagesloaded.pkgd.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+    </head>
+  <script>
+    window.setInterval(function() {
+      $('#moetweg').hide();
+      $('#moetweg2').hide();
+      $('#moetweg3').hide();
+      $('#moetweg4').hide();
+      $('#moetweg5').hide();
+      $('#moetweg6').hide();
+      var current = new Date();
+      var expiry = new Date("December 23, 2017 16:00:00")
+
+
+      if (current.getTime() > expiry.getTime()) {
+        $('#moetweg').show();
+        $('#moetweg2').show();
+        $('#moetweg3').show();
+        $('#moetweg4').show();
+        $('#moetweg5').show();
+        $('#moetweg6').show();
+        $('#menutesk').hide();
+      }
+
+    }, 1000);
+  </script>
+
+    <body>
+        
+        <div id="title">
+              <input type="checkbox" id="menu">
+         <label id="burgertje" for="menu" onclick></label>
+         <nav role="off-canvas">
+            <div id="sidebarlogo">
+               <a href="http://crosspointgetsewoud.nl" target="_blank"><img src="source/images/logo.png" alt="Het CrossPoint logo" id="crosspoint-logo"></a>
+            </div>
+            <div>
+               <h3 id=menutesk>Meer pagina's worden 2 uur voor de wandeling beschikbaar gemaakt</h3>
+            </div>
+            <div id="media">
+               <a href="https://nl-nl.facebook.com/crosspointgetsewoud/" target="_blank"><img src="source/images/facebook-logo.png" alt="Het facebook logo" id="facebook-logo" class="socialmedia-logo"></a>
+               <a href="http://crosspointgetsewoud.nl" target="_blank"><img src="source/images/internet-logo.png" alt="Het internet logo" id="internet-logo" class="socialmedia-logo"></a>
+               <a href="mailto:kerstwandeling@crosspointgetsewoud.nl?subject=Feedback Kerstwandeling&bcc=cemre8@live.nl"><img src="source/images/email-logo.png" alt="Het email logo" id="email-logo" class="socialmedia-logo"></a>
+            </div>
+            <ul>
+               <li><a href="index.html">Home</a></li>
+               <li> <a href="vooraf.html">Vooraf</a></li>
+               <li id="moetweg"><a href="route.html">Route en kaart</a></li>
+               <li id="moetweg2"><a href="scenes.html">Scènes</a></li>
+               <li><a href="kerstverhaal.html">Het kerstverhaal</a></li>
+               <li id="moetweg6"><a href="kaarsje.html">Kaarsje Aansteken</a></li>
+               <li id="moetweg3"><a href="afloop.html">Achteraf</a></li>
+               <li><a href="crosspoint.html">Over Crosspoint</a></li>
+               <li><a href="contact.html">Contact</a></li>
+            </ul>
+         </nav>
+            <h1 id="page-title">Contact</h1>
+        </div>
+        <div class="everything">
+            <h1>Kom in contact</h1>
+            <p>Heeft u vragen of opmerkingen naar aanleiding van de kerstwandelin of over CrossPoint zelf. Aarzel dan niet om contact met ons op te nemen. Telefonisch of door naar 1 van onze bijeenkomsten te komen. Ook kunt u ons emailen naar <a href="mailto:dominee@crosspointgetsewoud.nl">dominee@crosspointgetsewoud.nl</a>. Voor meer informatie kunt u naar onze website gaan. <br><button onclick="location.href='http://crosspointgetsewoud.nl/contact';" class="page-buttons">Meer info</button>
+            </p>
+            <p>
+                Op dinsdagmorgen (10 – 12 uur) en donderdagmiddag (14 – 16 uur) is Taco (onze dominee) in grandcafé Massada, in het winkelcentrum Getsewoud. Je kunt gewoon naar binnen lopen voor een goed gesprek, een luisterend oor en een directe vraag!
+            </p>
+            <h1>Onze website</h1>
+            <p>
+                Als u meer over onze kerk wilt weten dan zou u ook naar <a href="http://www.crosspointgetsewoud.nl">www.crosspointgetsewoud.nl</a> kunnen gaan.
+            </p>
+            <h1>Sociale Media</h1>
+            <p>Onze dominee Taco Koster is ook te vinden op FaceBook en Twitter.</p>
+            <button onclick="location.href='https://www.facebook.com/taco.koster';" class="page-buttons page_buttons_bottom">FaceBook</button> <button onclick="location.href='https://twitter.com/TacoKoster';" class="page-buttons page_buttons_bottom">Twitter</button>
+            </div>
+    </body>
+
+</html>

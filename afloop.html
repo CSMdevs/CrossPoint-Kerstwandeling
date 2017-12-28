@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+   <script src="https://www.w3schools.com/lib/w3.js"></script>
+   <head>
+      <link rel="prefetch" href="source/Background7.png">
+      <link rel="stylesheet" type="text/css" href="Stylesheets/stylesheet.css">
+      <link rel="stylesheet" type="text/css" href="Stylesheets/menu.css">
+      <link rel="stylesheet" type="text/css" href="Stylesheets/clock.css">
+      <link rel="stylesheet" type="text/css" href="Stylesheets/snow.css">
+      <link rel="stylesheet" type="text/css" href="Stylesheets/calendar.css">
+      <link rel="stylesheet" type="text/css" href="Stylesheets/buttons.css">
+      <link rel="prerender" href="contact.html">
+      <link rel="prerender" href="route.html">
+      <link rel="prerender" href="index.html">
+      <link rel="prerender" href="crosspoint.html">
+      <link rel="prerender" href="kerstverhaal.html">
+      <link rel="prerender" href="vooraf.html">
+      <link rel="prerender" href="scenes.html">
+      <link rel="prerender" href="kaarsje.html">
+      <link rel="prerender" href="afloop.html">
+      <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300' rel='stylesheet' type='text/css'>
+      <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300' rel='stylesheet' type='text/css'>
+      <title>Afloop | Kerstwandeling CrossPoint</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+      <script src="source/scripts/Bigmac.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+      <!--css voor de buttons van de calender-->
+      <link rel="stylesheet" href="css/theme5.css" type="text/css" media="screen" />
+   </head>
+   <script>
+    window.setInterval(function() {
+      $('#moetweg').hide();
+      $('#moetweg2').hide();
+      $('#moetweg3').hide();
+      $('#moetweg4').hide();
+      $('#moetweg5').hide();
+      $('#moetweg6').hide();
+      var current = new Date();
+      var expiry = new Date("December 23, 2017 16:00:00")
+
+
+      if (current.getTime() > expiry.getTime()) {
+        $('#moetweg').show();
+        $('#moetweg2').show();
+        $('#moetweg3').show();
+        $('#moetweg4').show();
+        $('#moetweg5').show();
+        $('#moetweg6').show();
+        $('#menutesk').hide();
+      }
+
+    }, 1000);
+  </script>
+   <body>
+      <div id="title">
+           <input type="checkbox" id="menu">
+         <label id="burgertje" for="menu" onclick></label>
+         <nav role="off-canvas">
+            <div id="sidebarlogo">
+               <a href="http://crosspointgetsewoud.nl" target="_blank"><img src="source/images/logo.png" alt="Het CrossPoint logo" id="crosspoint-logo"></a>
+            </div>
+            <div>
+               <h3 id=menutesk>Meer pagina's worden 2 uur voor de wandeling beschikbaar gemaakt</h3>
+            </div>
+            <div id="media">
+               <a href="https://nl-nl.facebook.com/crosspointgetsewoud/" target="_blank"><img src="source/images/facebook-logo.png" alt="Het facebook logo" id="facebook-logo" class="socialmedia-logo"></a>
+               <a href="http://crosspointgetsewoud.nl" target="_blank"><img src="source/images/internet-logo.png" alt="Het internet logo" id="internet-logo" class="socialmedia-logo"></a>
+               <a href="mailto:kerstwandeling@crosspointgetsewoud.nl?subject=Feedback Kerstwandeling&bcc=cemre8@live.nl"><img src="source/images/email-logo.png" alt="Het email logo" id="email-logo" class="socialmedia-logo"></a>
+            </div>
+            <ul>
+               <li><a href="index.html">Home</a></li>
+               <li> <a href="vooraf.html">Vooraf</a></li>
+               <li id="moetweg"><a href="route.html">Route en kaart</a></li>
+               <li id="moetweg2"><a href="scenes.html">Scènes</a></li>
+               <li><a href="kerstverhaal.html">Het kerstverhaal</a></li>
+               <li id="moetweg6"><a href="kaarsje.html">Kaarsje Aansteken</a></li>
+               <li id="moetweg3"><a href="afloop.html">Achteraf</a></li>
+               <li><a href="crosspoint.html">Over Crosspoint</a></li>
+               <li><a href="contact.html">Contact</a></li>
+            </ul>
+         </nav>
+         <h1 id="page-title">Na de wandeling</h1>
+      </div>
+      </div>
+      <div class="everything">
+         <h2>Samenkomst na kerst</h2>
+         <h3>
+            Ook op de kerstmorgen ben je van harte welkom in CrossPoint om het kerstfeest te vieren. 
+            <br>
+            <br> 
+            We starten om 10.00 uur in de Breedenborgh, Sarabande 1. 
+            <br>
+            <br>
+            Vier kerst!
+         </h3>
+         <br>
+         <h2>Vrijwillige bijdrage</h2>
+         <h3>
+            We hopen dat je genoten hebt van deze Kerstwandeling, wij hebben ons best voor jou gedaan.
+            <br>
+            Deelname aan de Kerstwandeling is gratis, maar een vrijwillige bijdrage wordt erg gewaardeerd.
+            <br>
+            Je kunt een bedrag overmaken naar: NL71RABO0132658208
+         </h3>
+         <h2>Suggesties</h2>
+         <h3>Heeft u feedback of een suggestie klik dan <a href="mailto:kerstwandeling@crosspointgetsewoud.nl?subject=Feedback/Suggestie Kerstwandeling&bcc=cemre8@live.nl">hier</a></h3>
+         <a href="giphy.mp4" id="random-video">Doei</a>
+      </div>
+   </body>
+</html>

@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:700');
+.page-buttons {
+    border-radius: 10px;
+    background-color:#5B7065;
+    border: none;
+    color: white;
+    text-align: center;
+    margin-top: 10px;
+    border: 1px solid #5B7065;
+    border-top: red;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 4.5vw;
+    font-family: 'Open Sans', sans-serif;
+    width: 30vw;
+    height: 10vw;
+}
+
+.page-buttons:hover {
+     color: black;
+}
+#random-video{
+    /* afloop-pagina onderaan een random video zie de link*/
+    font-size: 2px;
+}

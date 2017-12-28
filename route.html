@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <link rel="prefetch" href="source/Background7.png">
+    <meta charset="utf-8" />
+    <link rel="stylesheet" type="text/css" href="Stylesheets/stylesheet.css">
+    <link rel="stylesheet" type="text/css" href="Stylesheets/menu.css">
+    <link rel="stylesheet" type="text/css" href="Stylesheets/clock.css">
+    <link rel="stylesheet" type="text/css" href="Stylesheets/snow.css">
+    <link rel="stylesheet" type="text/css" href="Stylesheets/calendar.css">
+    <link rel="stylesheet" type="text/css" href="Stylesheets/buttons.css">
+    <link rel="prerender" href="contact.html">
+    <link rel="prerender" href="route.html">
+    <link rel="prerender" href="index.html">
+    <link rel="prerender" href="crosspoint.html">
+    <link rel="prerender" href="kerstverhaal.html">
+    <link rel="prerender" href="vooraf.html">
+    <link rel="prerender" href="scenes.html">
+    <link rel="prerender" href="kaarsje.html">
+    <link rel="prerender" href="afloop.html">
+    <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300' rel='stylesheet' type='text/css'>
+    <title>Route | Kerstwandeling CrossPoint</title>
+    <meta charset="utf-8">
+
+    <meta http-equiv="content-type" ccontent="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="source/scripts/Bigmac.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.2/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.imagesloaded/3.2.0/imagesloaded.pkgd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+    <script src="https://maps.google.com/maps/api/js?sensor=false"></script>
+    <script src=Location.js></script>
+
+    <style>
+      html,
+      body {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+
+      #dingetje {
+        position: absolute;
+        font-size: 20;
+        z-index: 1000000000000000;
+        top: -5px;
+      }
+
+      #menu {
+        z-index: -1000;
+
+      }
+
+      #map {
+        height: 100%;
+
+        font-size: 200px;
+      }
+    </style>
+  </head>
+  <script>
+    window.setInterval(function() {
+      $('#moetweg').hide();
+      $('#moetweg2').hide();
+      $('#moetweg3').hide();
+      $('#moetweg4').hide();
+      $('#moetweg5').hide();
+      $('#moetweg6').hide();
+      var current = new Date();
+      var expiry = new Date("December 23, 2017 16:00:00")
+
+
+      if (current.getTime() > expiry.getTime()) {
+        $('#moetweg').show();
+        $('#moetweg2').show();
+        $('#moetweg3').show();
+        $('#moetweg4').show();
+        $('#moetweg5').show();
+        $('#moetweg6').show();
+        $('#menutesk').hide();
+      }
+
+    }, 1000);
+  </script>
+
+  <body onload="init()">
+    <div id="snowflakeContainer">
+      <p class="snowflake">&#10052&#xFE0E;</p>
+    </div>
+    <div id="title">
+       <input type="checkbox" id="menu">
+         <label id="burgertje" for="menu" onclick></label>
+         <nav role="off-canvas">
+            <div id="sidebarlogo">
+               <a href="http://crosspointgetsewoud.nl" target="_blank"><img src="source/images/logo.png" alt="Het CrossPoint logo" id="crosspoint-logo"></a>
+            </div>
+            <div>
+               <h3 id=menutesk>Meer pagina's worden 2 uur voor de wandeling beschikbaar gemaakt</h3>
+            </div>
+            <div id="media">
+               <a href="https://nl-nl.facebook.com/crosspointgetsewoud/" target="_blank"><img src="source/images/facebook-logo.png" alt="Het facebook logo" id="facebook-logo" class="socialmedia-logo"></a>
+               <a href="http://crosspointgetsewoud.nl" target="_blank"><img src="source/images/internet-logo.png" alt="Het internet logo" id="internet-logo" class="socialmedia-logo"></a>
+               <a href="mailto:kerstwandeling@crosspointgetsewoud.nl?subject=Feedback Kerstwandeling&bcc=cemre8@live.nl"><img src="source/images/email-logo.png" alt="Het email logo" id="email-logo" class="socialmedia-logo"></a>
+            </div>
+            <ul>
+               <li><a href="index.html">Home</a></li>
+               <li> <a href="vooraf.html">Vooraf</a></li>
+               <li id="moetweg"><a href="route.html">Route en kaart</a></li>
+               <li id="moetweg2"><a href="scenes.html">Scènes</a></li>
+               <li><a href="kerstverhaal.html">Het kerstverhaal</a></li>
+               <li id="moetweg6"><a href="kaarsje.html">Kaarsje Aansteken</a></li>
+               <li id="moetweg3"><a href="afloop.html">Achteraf</a></li>
+               <li><a href="crosspoint.html">Over Crosspoint</a></li>
+               <li><a href="contact.html">Contact</a></li>
+            </ul>
+         </nav>
+      <h1 id="page-title">Route</h1>
+    </div>
+    <div id="map"></div>
+
+    <script>
+      function init() {
+        var opts = {
+          streetViewControl: false,
+          mapTypeControlOptions: {
+            position: google.maps.ControlPosition.BOTTOM_CENTER
+          },
+
+          tilt: 0,
+          center: new google.maps.LatLng(52.270832, 4.609102),
+          zoom: 15,
+          styles: [
+            { elementType: 'geometry', stylers: [{ color: '#242f3e' }] },
+            { elementType: 'labels.text.stroke', stylers: [{ color: '#242f3e' }] },
+            { elementType: 'labels.text.fill', stylers: [{ color: '#746855' }] },
+            {
+              featureType: 'administrative.locality',
+              elementType: 'labels.text.fill',
+              stylers: [{ color: '#d59563' }]
+            },
+            {
+              featureType: 'poi',
+              elementType: 'labels.text.fill',
+              stylers: [{ color: '#d59563' }]
+            },
+            {
+              featureType: 'poi.park',
+              elementType: 'geometry',
+              stylers: [{ color: '#263c3f' }]
+            },
+            {
+              featureType: 'poi.park',
+              elementType: 'labels.text.fill',
+              stylers: [{ color: '#6b9a76' }]
+            },
+            {
+              featureType: 'road',
+              elementType: 'geometry',
+              stylers: [{ color: '#38414e' }]
+            },
+            {
+              featureType: 'road',
+              elementType: 'geometry.stroke',
+              stylers: [{ color: '#212a37' }]
+            },
+            {
+              featureType: 'road',
+              elementType: 'labels.text.fill',
+              stylers: [{ color: '#9ca5b3' }]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'geometry',
+              stylers: [{ color: '#746855' }]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'geometry.stroke',
+              stylers: [{ color: '#1f2835' }]
+            },
+            {
+              featureType: 'road.highway',
+              elementType: 'labels.text.fill',
+              stylers: [{ color: '#f3d19c' }]
+            },
+            {
+              featureType: 'transit',
+              elementType: 'geometry',
+              stylers: [{ color: '#2f3948' }]
+            },
+            {
+              featureType: 'transit.station',
+              elementType: 'labels.text.fill',
+              stylers: [{ color: '#d59563' }]
+            },
+            {
+              featureType: 'water',
+              elementType: 'geometry',
+              stylers: [{ color: '#17263c' }]
+            },
+            {
+              featureType: 'water',
+              elementType: 'labels.text.fill',
+              stylers: [{ color: '#515c6d' }]
+            },
+            {
+              featureType: 'water',
+              elementType: 'labels.text.stroke',
+              stylers: [{ color: '#17263c' }]
+            }
+          ]
+
+
+        };
+        var flightPlanCoordinates = [
+          { lat: 52.269442, lng: 4.611891 },
+          { lat: 52.269961, lng: 4.610888 },
+          { lat: 52.270832, lng: 4.609102 },
+          { lat: 52.271028, lng: 4.608715 },
+          { lat: 52.270695, lng: 4.608190 },
+          { lat: 52.269985, lng: 4.607139 },
+          { lat: 52.269584, lng: 4.606674 },
+          { lat: 52.270038, lng: 4.605819 },
+          { lat: 52.270135, lng: 4.605951 },
+          { lat: 52.270569, lng: 4.605161 },
+          { lat: 52.271242, lng: 4.606124 },
+          { lat: 52.271312, lng: 4.606012 },
+          { lat: 52.271242, lng: 4.606124 },
+          { lat: 52.272014, lng: 4.607228 },
+          { lat: 52.271835, lng: 4.607623 },
+          { lat: 52.271592, lng: 4.608041 },
+          { lat: 52.272488, lng: 4.609368 },
+          { lat: 52.273405, lng: 4.610604 },
+          { lat: 52.273853, lng: 4.611503 },
+          { lat: 52.274119, lng: 4.611908 },
+          { lat: 52.273703, lng: 4.612737 },
+          { lat: 52.273552, lng: 4.612765 },
+          { lat: 52.273580, lng: 4.613066 },
+          { lat: 52.273270, lng: 4.613648 },
+          { lat: 52.273068, lng: 4.613701 },
+          { lat: 52.273089, lng: 4.613959 },
+          { lat: 52.272877, lng: 4.614335 },
+          { lat: 52.272477, lng: 4.613764 },
+          { lat: 52.272020, lng: 4.613187 },
+          { lat: 52.271363, lng: 4.614700 }
+        ];
+
+
+        var map = new google.maps.Map(document.getElementById('map'), opts);
+        var mapBounds = new google.maps.LatLngBounds(
+          new google.maps.LatLng(52.268004, 4.601139),
+          new google.maps.LatLng(52.272114, 4.619155));
+        var mapMinZoom = 15;
+        var mapMaxZoom = 18;
+        var overlay = new klokantech.MapTilerMapType(map, function(x, y, z) {
+            return "".replace('{z}', z).replace('{x}', x).replace('{y}', y);
+          },
+          mapBounds, mapMinZoom, mapMaxZoom);
+
+        map.setMapTypeId(google.maps.MapTypeId.ROADMAP);
+
+        var geoloccontrol = new klokantech.GeolocationControl(map);
+        map.fitBounds(mapBounds);
+        var flightPath = new google.maps.Polyline({
+          path: flightPlanCoordinates,
+          geodesic: true,
+          strokeColor: '#4c85ff',
+          strokeOpacity: 1.0,
+          strokeWeight: 7
+        });
+        flightPath.setMap(map);
+
+        var scene1 = { lat: 52.269442, lng: 4.611891 };
+        var scene2 = { lat: 52.269961, lng: 4.610888 };
+        var scene3 = { lat: 52.270832, lng: 4.609102 };
+        var scene4 = { lat: 52.270695, lng: 4.608190 };
+        var scene5 = { lat: 52.269985, lng: 4.607139 };
+        var scene6 = { lat: 52.270038, lng: 4.605819 };
+        var scene7 = { lat: 52.271312, lng: 4.606012 };
+        var scene8 = { lat: 52.271835, lng: 4.607623 };
+        var scene9 = { lat: 52.272488, lng: 4.609368 };
+        var scene10 = { lat: 52.273853, lng: 4.611503 };
+        var scene11 = { lat: 52.273552, lng: 4.612765 };
+        var scene12 = { lat: 52.273068, lng: 4.613701 };
+        var scene13 = { lat: 52.272477, lng: 4.613764 };
+        var scene14 = { lat: 52.271363, lng: 4.614700 };
+
+        //var labels = '①②③④⑤⑥⑦⑧⑨⑩⑪⑫⑬⑭⑮⑯⑰⑱⑲⑳';
+        var labels = '⑴⑵⑶⑷⑸⑹⑺⑻⑼⑽⑾⑿⒀⒁⒂⒃⒄⒅⒆⒇';
+        var labelIndex = 0;
+
+
+
+        var contentString = '<div id="content">' +
+          '<div id="siteNotice">' +
+          '</div>' +
+          '<h1 id="firstHeading" class="firstHeading">Scène 1</h1>' +
+          '<div id="bodyContent">' +
+          '<p>De zuilen in het Lentepark. Je hoort de muziek ' +
+          'en loopt een museum binnen. Het is het ' +
+          'museum van de schepping. Je ziet prachtige ' +
+          'schilderijen, gemaakt door leerlingen van het HVC. ' +
+          'De muziek doet je denken aan de bekende ' +
+          'serie Planet Earth. De conservator van het ' +
+          'museum heet je welkom en nodigt je uit om te ' +
+          'genieten. Het museum van de schepping laat ' +
+          'prachtige beelden van onze wereld zien. Ook in ' +
+          'onze wereld, met al zijn duistere kanten, is er ' +
+          'hoop en licht. En niet te vergeten, jij bent ' +
+          'bijzonder!<br>' +
+          '<a href="scenes.html#scene1">lees meer!</a>'
+        '</p>' +
+        '</div>' +
+        '</div>';
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+
+        var sceneA = new google.maps.Marker({
+          position: scene1,
+          map: map,
+          label: labels[labelIndex++ % labels.length],
+          title: 'Scene 1'
+        });
+        sceneA.addListener('click', function() {
+          infowindow.setContent(contentString);
+          infowindow.open(map, this);
+        });
+
+        var contentString2 = '<div id="content">' +
+          '<div id="siteNotice">' +
+          '</div>' +
+          '<h1 id="firstHeading" class="firstHeading">Scène 2</h1>' +
+          '<div id="bodyContent">' +
+          '<p>Ook dit jaar is er weer een speurtocht. Op deze plek worden de formulieren uitgedeeld. De kinderen gaan op zoek naar de sterren! En op die sterren staan letters die je moet opschrijven. En met al die letters kun je een woord maken. (Aan het einde van de kerstwandeling, scène 12, kun je het formulier weer inleveren. Na afloop van de wandeling trekken we een winnaar!) En volg vanaf nu het spoor van de lichtjes!</p>' +
+          '</div>' +
+          '</div>';
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString2
+        });
+        var SceneB = new google.maps.Marker({
+          position: scene2,
+          label: labels[labelIndex++ % labels.length],
+          map: map,
+          title: 'Scene 2'
+        });
+        SceneB.addListener('click', function() {
+          infowindow.setContent(contentString2);
+          infowindow.open(map, this);
+        });
+
+        var contentString3 = '<div id="content">' +
+          '<div id="siteNotice">' +
+          '</div>' +
+          '<h1 id="firstHeading" class="firstHeading">Scène 3</h1>' +
+          '<div id="bodyContent">' +
+          '<p>Als in de bijbel het kerstverhaal beschreven wordt, begint dat met een gesprek tussen de jonge Maria en een engel. Ze ontvangt wonderlijk nieuws en begrijpt er eigenlijk niets van. Er staat iets bijzonders te gebeuren in deze wereld. De geboorte van een klein kind zal alles anders maken. De geboorte van een ster?</p>' +
+          '</div>' +
+          '</div>';
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString3
+        });
+        var SceneC = new google.maps.Marker({
+          position: scene3,
+          label: labels[labelIndex++ % labels.length],
+          map: map,
+          title: 'Scene 3'
+        });
+        SceneC.addListener('click', function() {
+          infowindow.setContent(contentString3);
+          infowindow.open(map, this);
+        });
+
+        var contentString4 = '<div id="content">' +
+          '<div id="siteNotice">' +
+          '</div>' +
+          '<h1 id="firstHeading" class="firstHeading">Scène 4</h1>' +
+          '<div id="bodyContent">' +
+          '<p>Op deze plek wordt een gedicht voorgedragen door de zwangere Maria. En misschien herken je in haar wel de tienermoeder die er alleen voor staat? Mensen om haar heen roddelen. Wat maakt dat veel kapot. Als je niet oppast laat je iemand zo maar in de kou staan. Niet doen. </p>' +
+          '</div>' +
+          '</div>';
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString4
+        });
+        var SceneD = new google.maps.Marker({
+          position: scene4,
+          label: labels[labelIndex++ % labels.length],
+          map: map,
+          title: 'Scene 4'
+        });
+        SceneD.addListener('click', function() {
+          infowindow.setContent(contentString4);
+          infowindow.open(map, this);
+        });
+
+        var contentString5 = '<div id="content">' +
+          '<div id="siteNotice">' +
+          '</div>' +
+          '<h1 id="firstHeading" class="firstHeading">Scène 5</h1>' +
+          '<div id="bodyContent">' +
+          '<p>Een tweegesprek tussen Jozef en Maria. Ze zijn onderweg. De twijfel slaat toe. Gaat het allemaal wel goed komen? In dat tweegesprek eindigt Maria met het zingen van twee coupletten van een lied van Marco Borsato. In de vroegte van de morgen. De begeleiding is in alle eenvoud. </p>' +
+          '<iframe width="80%" src="https://youtube.com/embed/zfExEBCvdv0"></iframe>' +
+          '</div>' +
+          '</div>';
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString5
+        });
+        var SceneE = new google.maps.Marker({
+          position: scene5,
+          label: labels[labelIndex++ % labels.length],
+          map: map,
+          title: 'Scene 5'
+        });
+        SceneE.addListener('click', function() {
+          infowindow.setContent(contentString5);
+          infowindow.open(map, this);
+        });
+
+        var contentString6 = '<div id="content">' +
+          '<div id="siteNotice">' +
+          '</div>' +
+          '<h1 id="firstHeading" class="firstHeading">Scène 6</h1>' +
+          '<div id="bodyContent">' +
+          '<p>Een beetje ‘knullige’ engel komt aanlopen bij een groepje herders. Ze weten niet wat ze meemaken. Maar uiteindelijk ontdekken de herders dat de engel schokkend nieuws heeft te vertellen. Een bijzonder kind is geboren en daarmee wordt alles anders. God maakt een nieuw begin. Hij komt dichtbij en geeft hoop te midden van wanhoop, licht te midden van duisternis, vergeving te midden van schuld. En je begrijpt, daarom willen de herders op zoek gaan naar het kind dat geboren is.</p>' +
+          '</div>' +
+          '</div>';
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString6
+        });
+        var SceneF = new google.maps.Marker({
+          position: scene6,
+          label: labels[labelIndex++ % labels.length],
+          map: map,
+          title: 'Scene 6'
+        });
+        SceneF.addListener('click', function() {
+          infowindow.setContent(contentString6);
+          infowindow.open(map, this);
+        });
+
+        var contentString7 = '<div id="content">' +
+          '<div id="siteNotice">' +
+          '</div>' +
+          '<h1 id="firstHeading" class="firstHeading">Scène 7</h1>' +
+          '<div id="bodyContent">' +
+          '<p>Ook de wijzen (geleerde mensen uit die tijd) nodigen onsuit om mee te gaan en de ster te volgen. Ze geloven dat God grote dingen doet: Hij laat deze wereld nooit los! Het wordt een vrolijke optocht met gezellige muziek. Laat je meenemen in het feestgedruis!</p>' +
+          '<iframe width="80%" src="https://youtube.com/embed/rmqiu1lZlZg"></iframe>' +
+          '</div>' +
+          '</div>';
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString7
+        });
+        var SceneG = new google.maps.Marker({
+          position: scene7,
+          label: labels[labelIndex++ % labels.length],
+          map: map,
+          title: 'Scene 7'
+        });
+        SceneG.addListener('click', function() {
+          infowindow.setContent(contentString7);
+          infowindow.open(map, this);
+        });
+
+        var contentString8 = '<div id="content">' +
+          '<div id="siteNotice">' +
+          '</div>' +
+          '<h1 id="firstHeading" class="firstHeading">Scène 8</h1>' +
+          '<div id="bodyContent">' +
+          '<p>We zijn terug bij Jozef en Maria. Ze zijn op zoek naar een plek om te overnachten. En het kindje kan bijna geboren worden. Daarom kloppen ze aan bij een ‘herberg’. Er ontstaat een gesprek met de herbergier. (De herbergier lag al te slapen. Het duurt even voordat hij wakker is.)</p>' +
+          '</div>' +
+          '</div>';
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString8
+        });
+        var SceneH = new google.maps.Marker({
+          position: scene8,
+          label: labels[labelIndex++ % labels.length],
+          map: map,
+          title: 'Scene 8'
+        });
+        SceneH.addListener('click', function() {
+          infowindow.setContent(contentString8);
+          infowindow.open(map, this);
+        });
+
+        var contentString9 = '<div id="content">' +
+          '<div id="siteNotice">' +
+          '</div>' +
+          '<h1 id="firstHeading" class="firstHeading">Scène 9</h1>' +
+          '<div id="bodyContent">' +
+          '<p>Het engelenkoor zingt al een prachtig lied. God maakt een nieuw begin in deze wereld. Het licht is sterker dan de duisternis. Een klein en kwetsbaar nieuw begin. God biedt onvoorwaardelijk zijn liefde aan. En vergeet niet, de impact is groot. Tot op de dag van vandaag. (Anders had je deze wandeling ook niet gelopen😊)</p>' +
+          '</div>' +
+          '</div>';
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString9
+        });
+        var SceneI = new google.maps.Marker({
+          position: scene9,
+          label: labels[labelIndex++ % labels.length],
+          map: map,
+          title: 'Scene 9'
+        });
+        SceneI.addListener('click', function() {
+          infowindow.setContent(contentString9);
+          infowindow.open(map, this);
+        });
+
+        var contentString10 = '<div id="content">' +
+          '<div id="siteNotice">' +
+          '</div>' +
+          '<h1 id="firstHeading" class="firstHeading">Scène 10</h1>' +
+          '<div id="bodyContent">' +
+          '<p>Een herder staat op de zeepkist. Om hem heen staan andere personen (dorpsbewoner, soldaat, zwerver) en zij horen van het wonderlijke verhaal dat hij heeft meegemaakt: Een engel, engelenzang en God die een nieuw begin maakt. Een kind dat geboren is. En de aansporing klinkt om door te lopen! Ga op zoek naar dit kind en leer God kennen in zijn liefde!</p>' +
+          '</div>' +
+          '</div>';
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString10
+        });
+        var SceneJ = new google.maps.Marker({
+          position: scene10,
+          label: labels[labelIndex++ % labels.length],
+          map: map,
+          title: 'Scene 10'
+        });
+        SceneJ.addListener('click', function() {
+          infowindow.setContent(contentString10);
+          infowindow.open(map, this);
+        });
+
+        var contentString11 = '<div id="content">' +
+          '<div id="siteNotice">' +
+          '</div>' +
+          '<h1 id="firstHeading" class="firstHeading">Scène 11</h1>' +
+          '<div id="bodyContent">' +
+          '<p>Midden in Getsewoud een opvallend beeld. Een oude stal met Jozef en Maria. Hun kindje Jezus is geboren. Een klein jongetje, hij lijkt heel gewoon. Maar hij is de Zoon van God, licht in de duisternis, redder bij uitstek, bron van liefde en vergeving, man van vrede en recht. Een ster is geboren. In Hem biedt God een nieuw begin aan, een uniek reddingsplan te midden van gebrokenheid en gebrekkigheid. (Maar verbijsterend genoeg vertelt de bijbel ook dat mensen Hem later niet zullen begrijpen. Hij zal onschuldig veroordeeld worden en sterven aan een kruis, 33 jaar oud. Maar Gods macht is sterker dan de dood. Jezus staat op. Hij leeft! Licht is sterker dan de duisternis!)<br><br>' +
+          'Naast de stal staan mensen die een prachtig lied zingen. Het lied laat je horen hoe jij de echte betekenis van kerst in jouw leven kunt ontdekken.</p>' +
+          '<iframe width="80%" src="https://youtube.com/embed/Zk5w4UCVMOA"></iframe>' +
+          '</div>' +
+          '</div>';
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString11
+        });
+        var SceneK = new google.maps.Marker({
+          position: scene11,
+          label: labels[labelIndex++ % labels.length],
+          map: map,
+          title: 'Scene 11'
+        });
+        SceneK.addListener('click', function() {
+          infowindow.setContent(contentString11);
+          infowindow.open(map, this);
+        });
+
+        var contentString12 = '<div id="content">' +
+          '<div id="siteNotice">' +
+          '</div>' +
+          '<h1 id="firstHeading" class="firstHeading">Scène 12</h1>' +
+          '<div id="bodyContent">' +
+          '<p>Nu kom je op het marktplein met een koopman, een timmerman, een visverkoper, etc. Maar ook met veel gezelligheid, muziek. En ja, hier kunnen de kinderen hun formulier van de speurtocht inleveren. Het is feest! En dat moet aan alles te merken zijn.</p>' +
+          '</div>' +
+          '</div>';
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString12
+        });
+        var SceneL = new google.maps.Marker({
+          position: scene12,
+          label: labels[labelIndex++ % labels.length],
+          map: map,
+          title: 'Scene 12'
+        });
+        SceneL.addListener('click', function() {
+          infowindow.setContent(contentString12);
+          infowindow.open(map, this);
+        });
+
+        var contentString13 = '<div id="content">' +
+          '<div id="siteNotice">' +
+          '</div>' +
+          '<h1 id="firstHeading" class="firstHeading">Scène 13</h1>' +
+          '<div id="bodyContent">' +
+          '<p>Hier staan opnieuw schildersezels. Maar nu staan er spiegels op: Jij bent een mooi kunstwerk! Jij bent geliefd door God! Sta op en schitter in Gods licht! (En je kunt hier ook een foto laten maken. Toffe herinnering aan deze kerstwandeling!)</p>' +
+          '</div>' +
+          '</div>';
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString13
+        });
+        var SceneM = new google.maps.Marker({
+          position: scene13,
+          label: labels[labelIndex++ % labels.length],
+          map: map,
+          title: 'Scene 13'
+        });
+        SceneM.addListener('click', function() {
+          infowindow.setContent(contentString13);
+          infowindow.open(map, this);
+        });
+
+        var contentString14 = '<div id="content">' +
+          '<div id="siteNotice">' +
+          '</div>' +
+          '<h1 id="firstHeading" class="firstHeading">Scène 14</h1>' +
+          '<div id="bodyContent">' +
+          '<p>Samen met WoonZorgcentrum In ’t Zomerpark hebben we een heuse herberg gemaakt. Gezellige live muziek op de achtergrond en warme chocomel. Op de heuvel vind je ook een verlicht kruis, gemaakt door leerlingen van het HVC. Je kunt er een kaarsje aansteken, een gebed doen.<br><br>Je kan ook een kaarsje online kaarjes online aansteken <a href="kaarsje.html">klik dan hier</a>.</p>' +
+          '</div>' +
+          '</div>';
+        var infowindow = new google.maps.InfoWindow({
+          content: contentString14
+        });
+        var SceneN = new google.maps.Marker({
+          position: scene14,
+          label: labels[labelIndex++ % labels.length],
+          map: map,
+          title: 'Scene 14'
+        });
+        SceneN.addListener('click', function() {
+          infowindow.setContent(contentString14);
+          infowindow.open(map, this);
+        });
+      }
+    </script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBow4nLEFiHuSquAGg-Bh09MszCFc4CT-M&callback=initMap"></script>
+  </body>
+
+</html>

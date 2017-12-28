@@ -1,0 +1,220 @@
+
+* {
+  box-sizing: border-box;
+}
+
+
+
+
+#burgertje {
+  z-index: 10000000000000000;
+}
+/* custom scrollbar */
+::-webkit-scrollbar {
+  width: 2px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #5B7065;
+}
+
+::-webkit-scrollbar-thumb {
+  background: white;
+  box-shadow: inset 0.05em 0.05em 0 rgba(0, 0, 0, 0.1), inset 0 -0.05em 0 rgba(0, 0, 0, 0.07);
+}
+
+/* dummy content */
+.content {
+  float: left;
+  font: 1em 'Open Sans', sans-serif;
+  margin: .75em 0 0 0;
+  transition: margin .3s ease-in-out;
+ 
+}
+.content > p {
+  margin: .25em 0 .75em 0;
+}
+
+/* Advanced Checkbox Hack */
+body {
+  -webkit-animation: bugfix infinite 1s;
+}
+
+@-webkit-keyframes bugfix {
+  from {
+    padding: 0;
+  }
+  to {
+    padding: 0;
+  }
+}
+input[type=checkbox] {
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
+}
+
+label {
+
+z-index: 10000;
+text-align: center;
+content: center;
+  position: relative;
+  left: 0;
+  display: none;
+  width: 40px;
+  height: 40px;
+  padding: .35em;
+  font-size: 1.1em;
+  color: #04202C;
+  transition: color .3s ease-in-out;
+  cursor: url(cursor.cur), auto;
+  user-select: none;
+  margin: 0;
+  background: #5B7065;
+}
+
+/* big screens */
+nav[role="off-canvas"] {
+    z-index: 1;
+  
+  width: 50em;
+  margin: 0 auto;
+  transition-duration: .3s, .5s;
+  transition-timing-function: ease-in-out;
+  transition-property: left, opacity, box-shadow;
+}
+nav[role="off-canvas"] a {
+     
+  color: #fff;
+  text-decoration: none;
+  font: 1.4em 'Open Sans', sans-serif;
+  transition: color .3s ease-in-out;
+  display: table-cell;
+  vertical-align: middle;
+}
+nav[role="off-canvas"] ul {
+
+  padding: 0;
+  margin: 0 auto;
+  width: 100%;
+}
+nav[role="off-canvas"] ul > li {
+  float: left;
+  position: relative;
+  
+  padding: .55em .55em;
+  width: 8em;
+  height: 8em;
+  margin: .5em;
+  opacity: .8;
+  text-transform: uppercase;
+  display: table;
+  background: #304040;
+  cursor: pointer;
+  text-align: center;
+  transition-duration: .3s;
+  transition-timing-function: ease-in-out;
+  transition-property: box-shadow, color, opacity, padding-left;
+  cursor: pointer;
+}
+nav[role="off-canvas"] ul > li:hover {
+  color: #fff;
+  opacity: 1;
+  box-shadow: 0 0 0 0.5em rgba(255, 255, 255, 0.95);
+}
+nav[role="off-canvas"] ul > li:hover > a {
+  color: #fff;
+}
+nav[role="off-canvas"] ul > li:nth-child(2) {
+  background: #304040;
+}
+nav[role="off-canvas"] ul > li:nth-child(3) {
+ background: #304040;
+}
+nav[role="off-canvas"] ul > li:nth-child(4) {
+ background: #304040;
+}
+nav[role="off-canvas"] ul > li:nth-child(5) {
+  background: #304040;
+}
+#crosspoint-logo{
+  width: 100px;
+  margin-left: 10px;
+}
+/* small screens */
+@media screen and (max-width: 44000em) {
+  html,
+  body {
+    margin: 0;
+    overflow-x: hidden;
+  }
+
+  .content {
+    margin: 2.5em .5em 0 .5em;
+  }
+
+  nav[role="off-canvas"] {
+    position: absolute;
+    top: 3em;
+    left: -20em;
+    width: 20em;
+    opacity: 0;
+    background: #304040;
+  }
+  nav[role="off-canvas"] ul > li {
+    height: 100%;
+    width: 100%;
+    text-align: left;
+    margin: 0;
+  }
+  nav[role="off-canvas"] ul > li:hover {
+    box-shadow: inset 0 0 0 0.15em rgba(255, 255, 255, 0.4);
+  }
+
+  label {
+    display: block;
+  }
+
+  label:after {
+    position: absolute;
+    right: .25em;
+    top: 0;
+    content: "\2261";
+    font-size: 1.8em;
+    z-index: 100;
+  }
+
+  label:hover,
+  input:checked ~ label {
+    color: #000;
+  }
+  input:checked ~ label {
+    background: #304040;
+  }
+  input:checked ~ nav[role="off-canvas"] {
+    opacity: 1;
+    left: 0;
+    box-shadow: -30em 0 0 30em #304040;
+  }
+  input:checked ~ nav[role="off-canvas"] ul > li {
+    padding: .55em .55em .55em 1.5em;
+  }
+  input:checked ~ nav[role="off-canvas"] ul > li:hover {
+    padding-left: 3.5em;
+  }
+  input:checked ~ nav[role="off-canvas"] ul > li:after {
+    position: absolute;
+    right: .25em;
+    content: "\203A";
+    font: bold 1.4em sans-serif;
+    color: inherit;
+  }
+
+  input:checked ~ .content {
+    margin-left: 20.5em;
+    margin-right: -20.5em;
+  }
+}
+
+

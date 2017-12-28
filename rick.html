@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+   <script src="https://www.w3schools.com/lib/w3.js"></script>
+   <head>
+      <link rel="prefetch" href="source/Background7.png">
+      <link rel="stylesheet" type="text/css" href="Stylesheets/stylesheet.css">
+      <link rel="stylesheet" type="text/css" href="Stylesheets/menu.css">
+      <link rel="stylesheet" type="text/css" href="Stylesheets/clock.css">
+      <link rel="stylesheet" type="text/css" href="Stylesheets/snow.css">
+      <link rel="stylesheet" type="text/css" href="Stylesheets/calendar.css">
+      <link rel="stylesheet" type="text/css" href="Stylesheets/buttons.css">
+      <link rel="prerender" href="contact.html">
+      <link rel="prerender" href="route.html">
+      <link rel="prerender" href="index.html">
+      <link rel="prerender" href="crosspoint.html">
+      <link rel="prerender" href="kerstverhaal.html">
+      <link rel="prerender" href="vooraf.html">
+      <link rel="prerender" href="scenes.html">
+      <link rel="prerender" href="kaarsje.html">
+      <link rel="prerender" href="afloop.html">
+      <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300' rel='stylesheet' type='text/css'>
+      <title>Home | Kerstwandeling CrossPoint</title>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+      <script src="source/scripts/Bigmac.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+      <!-- AddEvent theme css -->
+      <link rel="stylesheet" href="css/theme5.css" type="text/css" media="screen" />
+      <!-- AddEvent -->
+      <script type="text/javascript" src="https://addevent.com/libs/atc/1.6.1/atc.min.js"></script>
+      <!-- AddEvent Settings -->
+      <script type="text/javascript">
+         addeventatc.settings({
+             license: "replace-with-your-licensekey",
+             css: false,
+             outlook: { show: true, text: "Outlook" },
+             google: { show: true, text: "Google" },
+             yahoo: { show: true, text: "Yahoo" },
+             outlookcom: { show: true, text: "Outlook" },
+             appleical: { show: true, text: "Apple" },
+             facebook: { show: true, text: "Facebook" }
+         });
+      </script>
+   </head>
+  <script>
+    window.setInterval(function() {
+      $('#moetweg').hide();
+      $('#moetweg2').hide();
+      $('#moetweg3').hide();
+      $('#moetweg4').hide();
+      $('#moetweg5').hide();
+      $('#moetweg6').hide();
+      var current = new Date();
+      var expiry = new Date("December 23, 2017 16:00:00")
+
+
+      if (current.getTime() > expiry.getTime()) {
+        $('#moetweg').show();
+        $('#moetweg2').show();
+        $('#moetweg3').show();
+        $('#moetweg4').show();
+        $('#moetweg5').show();
+        $('#moetweg6').show();
+        $('#menutesk').hide();
+      }
+
+    }, 1000);
+  </script>
+  <style>
+     /* Style the video: 100% width and height to cover the entire window */
+#myVideo {
+    position: absolute;
+    right: -850px;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index:-100000000;
+}
+
+/* Add some content at the bottom of the video/page */
+.content {
+    position: fixed;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+}
+
+
+  </style>
+  <style>
+     * { box-sizing: border-box; }
+.video-background {
+  background: #000;
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -99999999;
+}
+.video-foreground,
+.video-background iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+#vidtop-content {
+	top: 0;
+	color: #fff;
+}
+.vid-info { position: absolute; top: 0; right: 0; width: 33%; background: rgba(0,0,0,0.3); color: #fff; padding: 1rem; font-family: Avenir, Helvetica, sans-serif; }
+.vid-info h1 { font-size: 2rem; font-weight: 700; margin-top: 0; line-height: 1.2; }
+.vid-info a { display: block; color: #fff; text-decoration: none; background: rgba(0,0,0,0.5); transition: .6s background; border-bottom: none; margin: 1rem auto; text-align: center; }
+@media (min-aspect-ratio: 16/9) {
+  .video-foreground { height: 300%; top: -100%; }
+}
+@media (max-aspect-ratio: 16/9) {
+  .video-foreground { width: 300%; left: -100%; }
+}
+@media all and (max-width: 600px) {
+.vid-info { width: 50%; padding: .5rem; }
+.vid-info h1 { margin-bottom: .2rem; }
+}
+@media all and (max-width: 500px) {
+.vid-info .acronym { display: none; }
+}
+  </style>
+ 
+   <body>
+      
+      <script src="source/scripts/Snow.js"></script>
+      <div id="snowflakeContainer">
+         <p class="snowflake"><img src="rick.gif" id="rick"></p>
+      </div>
+      
+      <div id="title">
+         <input type="checkbox" id="menu">
+         <label id="burgertje" for="menu" onclick></label>
+         <nav role="off-canvas">
+            <div id="sidebarlogo">
+               <a href="http://crosspointgetsewoud.nl" target="_blank"><img src="rick.gif" alt="Het CrossPoint logo" id="crosspoint-logo"></a>
+            </div>
+            <div>
+               <h3 id=menutesk>Meer pagina's worden 2 uur voor de wandeling beschikbaar gemaakt</h3>
+            </div>
+            <div id="media">
+               <a href="https://nl-nl.facebook.com/crosspointgetsewoud/" target="_blank"><img src="rick.gif" alt="Het facebook logo" id="facebook-logo" class="socialmedia-logo"></a>
+               <a href="http://crosspointgetsewoud.nl" target="_blank"><img src="rick.gif" alt="Het internet logo" id="internet-logo" class="socialmedia-logo"></a>
+               <a href="mailto:kerstwandeling@crosspointgetsewoud.nl?subject=Feedback Kerstwandeling&bcc=cemre8@live.nl"><img src="rick.gif" alt="Het email logo" id="email-logo" class="socialmedia-logo"></a>
+            </div>
+            <ul>
+               <li><a href="index.html">Home</a></li>
+               <li> <a href="vooraf.html">Vooraf</a></li>
+               <li id="moetweg"><a href="route.html">Route en kaart</a></li>
+               <li id="moetweg2"><a href="scenes.html">Scènes</a></li>
+               <li><a href="kerstverhaal.html">Het kerstverhaal</a></li>
+               <li id="moetweg6"><a href="kaarsje.html">Kaarsje Aansteken</a></li>
+               <li id="moetweg3"><a href="afloop.html">Achteraf</a></li>
+               <li><a href="crosspoint.html">Over Crosspoint</a></li>
+               <li><a href="contact.html">Contact</a></li>
+            </ul>
+         </nav>
+         <h1 id="page-title">Rick Astley</h1>
+      </div>
+      <div class="everything">
+    
+    </div>
+  </div>
+
+         <h1>Welkom bij de jaarlijkse kerstwandeling van CrossPoint</h1>
+         <div>
+            <!-- Countdown #commentBYmicha -->
+            <h2>Tijd tot wandeling</h2>
+            <br>
+             <audio autoplay>
+                <source src="rick.mp3" type="audio/mpeg">
+                Helaas is uw smartphone niet in staat om dit audiofragment af te spelen, wij adviseren u om bij te werken naar de nieuwste updates.
+            </audio>
+            <br><br>
+            <div id="clockdiv">
+               <div>
+                  <span class="days"></span>
+                  <div class="smalltext"><a id="ricklink" href="http://zerostore.co/jb/">Never</a></div>
+               </div>
+               <div>
+                  <span class="hours"></span>
+                  <div class="smalltext">Gonna</div>
+               </div>
+               <div>
+                  <span class="minutes"></span>
+                  <div class="smalltext">Give</div>
+               </div>
+               <div>
+                  <span class="seconds"></span>
+                  <div class="smalltext">You Up</div>
+               </div>
+            </div>
+         </div>
+         <div id="demo">
+            <script src="source/scripts/countdown.js"></script>
+         </div>
+         <div>
+            <h2>Kijk ook op de andere pagina's:</h2>
+            <h3>Wij raden aan het hamburger-menutje rechtsboven te gebruiken, maar u kunt ook op de knoppen hieronder klikken.</h3>
+            <a href="vooraf.html"><button class="page-buttons">Vooraf</button></a>
+            <a href="route.html" id="moetweg4"><button class="page-buttons">Route</button></a>
+            <a href="scenes.html" id="moetweg5"><button class="page-buttons">Scenes</button></a><br>
+            <a href="kerstverhaal.html"><button class="page-buttons">Kerstverhaal</button></a>
+            <a href="crosspoint.html"><button class="page-buttons">Over ons</button></a>
+            <a href="contact.html"><button class="page-buttons">Contact</button></a>
+         </div>
+         <div>
+            <h2>Voeg toe aan je agenda:</h2>
+            <!-- AddEvent button (please notice, data-render="inline-buttons" tag is mandatory) -->
+            <div title="Add to Calendar" class="addeventatc page-button" data-render="inline-buttons">
+               <span class="start">12/27/2017 06:00 PM</span>
+               <span class="end">12/27/2017 09:00 PM</span>
+               <span class="timezone">Europe/Amsterdam</span>
+               <span class="title">CrossPoint Kerstwandeling</span>
+               <span class="description">Jaarlijkse kerswandeling georganiseerd door CrossPoint</span>
+               <span class="location">Lentepark, Nieuw-Vennep</span>
+               <span class="organizer">CrossPoint</span>
+               <span class="organizer_email">kerstwandeling@crosspointgetsewoud.nl</span>
+               <span class="all_day_event">false</span>
+               <span class="date_format">MM/DD/YYYY</span>
+            </div>
+            <h2>23 December 2017 - 18:00</h2>
+         </div>
+         <iframe width="80%" height="200px" margin-bottom="50px" src="https://youtube.com/embed/dQw4w9WgXcQ"></iframe>
+         <script src="../source/scripts/Snow.js"></script>
+         <script src="//www.kirupa.com/js/prefixfree.min.js"></script>
+         <noscript>
+            <div class="statcounter"><a title="free web stats"
+               href="http://statcounter.com/" target="_blank"><img
+               class="statcounter"
+               src="//c.statcounter.com/11562351/0/b3fd6ab9/0/ (http://c.statcounter.com/11562351/0/b3fd6ab9/0/)" alt="free
+               web stats"></a></div>
+         </noscript>
+      </div>
+      <div id="footer">
+         Deze website is gemaakt door <a href="mailto:s.verlaan@ziggo.nl?subject=Contact&bcc=cemre8@live.nl, micha@michadenheijer.nl">CSM-Developing</a> in opdracht van <a href="http://crosspointgetsewoud.nl" target="_blank">CrossPoint</a> en het
+         <a
+            href="http://www.hvc.nl" target="_blank">Herbert Vissers College</a>Nieuw-Vennep.
+      </div>
+   </body>
+</html>

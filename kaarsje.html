@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html id="dit-dan">
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+    
+    <head>
+        <link rel="prefetch" href="source/Background7.png">
+        <link rel="stylesheet" type="text/css" href="Stylesheets/kaarsje.css">
+        <link rel="stylesheet" type="text/css" href="Stylesheets/stylesheet.css">
+        <link rel="stylesheet" type="text/css" href="Stylesheets/menu.css">
+        <link rel="stylesheet" type="text/css" href="Stylesheets/clock.css">
+        <link rel="stylesheet" type="text/css" href="Stylesheets/snow.css">
+        <link rel="stylesheet" type="text/css" href="Stylesheets/calendar.css">
+        <link rel="stylesheet" type="text/css" href="Stylesheets/buttons.css">
+        <link rel="prerender" href="contact.html">
+        <link rel="prerender" href="route.html">
+        <link rel="prerender" href="index.html">
+        <link rel="prerender" href="crosspoint.html">
+        <link rel="prerender" href="kerstverhaal.html">
+        <link rel="prerender" href="vooraf.html">
+        <link rel="prerender" href="scenes.html">
+        <link rel="prerender" href="kaarsje.html">
+        <link rel="prerender" href="afloop.html">
+        <link href='https://fonts.googleapis.com/css?family=Source+Code+Pro:200,300' rel='stylesheet' type='text/css'>
+        <title>Kaarsje | Kerstwandeling CrossPoint</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+        <script src="source/scripts/Bigmac.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+    </head>
+   <script>
+    window.setInterval(function() {
+      $('#moetweg').hide();
+      $('#moetweg2').hide();
+      $('#moetweg3').hide();
+      $('#moetweg4').hide();
+      $('#moetweg5').hide();
+      $('#moetweg6').hide();
+      var current = new Date();
+      var expiry = new Date("December 23, 2017 16:00:00")
+
+
+      if (current.getTime() > expiry.getTime()) {
+        $('#moetweg').show();
+        $('#moetweg2').show();
+        $('#moetweg3').show();
+        $('#moetweg4').show();
+        $('#moetweg5').show();
+        $('#moetweg6').show();
+        $('#menutesk').hide();
+      }
+//stan!!! lees de chat pls
+//Ben je online???
+    }, 1000);
+  </script>
+    <style>
+    </style>
+    <body id="pls-werk">
+        <div id="title">
+             <input type="checkbox" id="menu">
+         <label id="burgertje" for="menu" onclick></label>
+         <nav role="off-canvas">
+            <div id="sidebarlogo">
+               <a href="http://crosspointgetsewoud.nl" target="_blank"><img src="source/images/logo.png" alt="Het CrossPoint logo" id="crosspoint-logo"></a>
+            </div>
+            <div>
+               <h3 id=menutesk>Meer pagina's worden 2 uur voor de wandeling beschikbaar gemaakt</h3>
+            </div>
+            <div id="media">
+               <a href="https://nl-nl.facebook.com/crosspointgetsewoud/" target="_blank"><img src="source/images/facebook-logo.png" alt="Het facebook logo" id="facebook-logo" class="socialmedia-logo"></a>
+               <a href="http://crosspointgetsewoud.nl" target="_blank"><img src="source/images/internet-logo.png" alt="Het internet logo" id="internet-logo" class="socialmedia-logo"></a>
+               <a href="mailto:kerstwandeling@crosspointgetsewoud.nl?subject=Feedback Kerstwandeling&bcc=cemre8@live.nl"><img src="source/images/email-logo.png" alt="Het email logo" id="email-logo" class="socialmedia-logo"></a>
+            </div>
+            <ul>
+               <li><a href="index.html">Home</a></li>
+               <li> <a href="vooraf.html">Vooraf</a></li>
+               <li id="moetweg"><a href="route.html">Route en kaart</a></li>
+               <li id="moetweg2"><a href="scenes.html">Scènes</a></li>
+               <li><a href="kerstverhaal.html">Het kerstverhaal</a></li>
+               <li id="moetweg6"><a href="kaarsje.html">Kaarsje Aansteken</a></li>
+               <li id="moetweg3"><a href="afloop.html">Achteraf</a></li>
+               <li><a href="crosspoint.html">Over Crosspoint</a></li>
+               <li><a href="contact.html">Contact</a></li>
+            </ul>
+         </nav>
+            </nav>
+            <h1 id="page-title">Steek een kaarsje aan!</h1>
+        </div>>
+        <h2 id="kaarsje-text">Hier kunt u als u wilt een digitaal kaarsje aansteken. Ook kunt u de wensen van andere mensen zien.</h2>
+        <div class="everything">
+            <iframe id="awnsergarden" src="https://answergarden.ch/embed/611115" width="100%" height="600px" scrolling="no" style="border: none;" scrolling="no" frameborder="0" title="AnswerGarden" allowTransparency="true"><p><a href="https://answergarden.ch/611115">Go to AnswerGarden</a></p></iframe>
+        </div>
+        </body>
+</html>

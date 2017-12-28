@@ -1,0 +1,52 @@
+#demo{
+    width: 100%;
+    font-size: 10vw;
+    color: #5B7065;
+    text-align: center;
+    
+    
+}
+
+
+#clockdiv{
+    position: relative;
+	color: #fff;
+	display: inline-block;
+	text-align: center;
+	font-size: 11vw;
+	font-weight: 900;
+}
+#tijdwandel {
+    position: relative;
+    z-index: 100;
+    font-size: 3vw;
+}
+#clockdiv > div{
+	padding: 6px;
+	border-radius: 5px;
+	/*background: #00BF96;*/
+	display: inline-block;
+}
+
+#clockdiv div > span{
+    
+	padding: 10px;
+	border-radius: 3px;
+	
+	
+	display: inline-block;
+	color: #04202C;
+	font-weight: 800;
+}
+
+.smalltext{
+	position: relative;
+	top: -15px;
+	font-size: 3vw;
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 900;
+	color: #04202C;
+}
+/*
+
+*/

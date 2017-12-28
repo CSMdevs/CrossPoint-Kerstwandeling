@@ -1,0 +1,138 @@
+/*  theme CSS
+---------------------------------------------------------------------- */
+/* The button */
+
+.addeventatc {
+    display: inline-block;
+    position: relative;
+    z-index: 999998;
+    font-family: Roboto, "Helvetica Neue", Helvetica, Optima, Segoe, "Segoe UI", Candara, Calibri, Arial, sans-serif;
+    color: #fff!important;
+    font-weight: 300;
+    text-decoration: none;
+    font-size: 15px;
+}
+.addeventatc:hover {
+    color: #fff;
+    font-size: 15px;
+    text-decoration: none;
+}
+.addeventatc .start,
+.addeventatc .end,
+.addeventatc .timezone,
+.addeventatc .title,
+.addeventatc .description,
+.addeventatc .location,
+.addeventatc .organizer,
+.addeventatc .organizer_email,
+.addeventatc .facebook_event,
+.addeventatc .all_day_event,
+.addeventatc .date_format,
+.addeventatc .alarm_reminder,
+.addeventatc .recurring,
+.addeventatc .attendees,
+.addeventatc .calname,
+.addeventatc .uid,
+.addeventatc .status,
+.addeventatc .method,
+.addeventatc .client {
+    display: none!important;
+}
+/* The drop down */
+
+.addeventatc_dropdown {
+    position: relative;
+    text-align: left;
+    display: block!important;
+}
+.addeventatc_dropdown span {
+    display: inline-block;
+    position: relative;
+    line-height: 110%;
+    background: #5B7065 url(../gfx/button-bg-t1.png) repeat-x!important;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 300;
+    color: white;
+    cursor: pointer;
+    padding: 7px 14px 8px 12px;
+    border: 1px solid #5B7065;
+    margin: 0px 6px 0px 0px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+}
+.addeventatc_dropdown span:hover {
+    background:  #304040;
+    color: #000;
+    text-decoration: none;
+    font-size: 3.1vw;
+     width: 15vw;
+     margin-top: 10px;
+}
+.addeventatc_dropdown span:active {
+    top: 1px;
+}
+.addeventatc_dropdown .ateoutlook {
+    border-top: 3px solid #fa9d00;
+    width: 15vw;
+    text-align: center;
+    font-size: 3vw;
+    display: none;
+    margin-top: 10px;
+}
+.addeventatc_dropdown .ategoogle {
+    border-top: 3px solid #d53900;
+    width: 15vw;
+    text-align: center;
+    font-size: 3vw;
+    margin-top: 10px;
+}
+.addeventatc_dropdown .ateoutlookcom {
+    border-top: 3px solid #1473c5;
+    width: 15vw;
+    text-align: center;
+    font-size: 3vw;
+    margin-top: 10px;
+}
+.addeventatc_dropdown .ateyahoo {
+    border-top: 3px solid #65106e;
+    width: 15vw;
+    text-align: center;
+    font-size: 3vw;
+    margin-top: 10px;
+}
+.addeventatc_dropdown .ateappleical {
+    border-top: 3px solid #ab373a;
+    width: 15vw;
+    text-align: center;
+    font-size: 3vw;
+    margin-top: 10px;
+}
+.addeventatc_dropdown .atefacebook {
+    border-top: 3px solid #43609c;
+}
+.addeventatc_dropdown .copyx {
+    display: none;
+}
+.addeventatc_dropdown .brx {
+    display: none;
+}
+.addeventatc_dropdown .frs {
+    position: absolute;
+    top: 8px;
+    cursor: pointer;
+    right: 13px;
+    padding-left: 10px;
+    font-style: normal;
+    font-weight: normal;
+    text-align: right;
+    z-index: 101;
+    line-height: 110%;
+    background: #fff;
+    text-decoration: none;
+    font-size: 10px;
+    color: #cacaca;
+}
+.addeventatc_dropdown .frs:hover {
+    color: #6d84b4;
+}
